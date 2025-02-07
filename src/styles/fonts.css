@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'GT-Regular';   
+  src: url('@/assets/fonts/GT-America-Regular.woff2') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT-Light';   
+  src: url('@/assets/fonts/GT-America-Light.woff2') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT-Medium';   
+  src: url('@/assets/fonts/GT-America-Medium.woff2') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+} 
+
+@font-face {
+    font-family: 'GT-Bold';   
+    src: url('@/assets/fonts/GT-America-Bold.woff2') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  } 

@@ -1,0 +1,18 @@
+@import './reset.css';
+@import './variables.css';
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Variables CSS globales */
+:root {
+  --primary-color: #333;
+  --secondary-color: #666;
+  --background-color: #fff;
+} 
