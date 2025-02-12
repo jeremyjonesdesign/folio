@@ -4,13 +4,17 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow-y: auto;
   background-color: white;
+  color: black;
+  gap: 20rem;
+  font-family: 'Inter';
 }
 
 #app {
   width: 100%;
   height: 100%;
+
 }
 
 * {
@@ -36,10 +40,6 @@ html, body {
   font-style: normal;
 }
 
-* {
-  font-family: 'GT-Regular', sans-serif;
-}
-
 .container {
   display: flex;
   width: 100vw; /* Utilisation de vw pour prendre toute la largeur de la fenêtre */
@@ -48,6 +48,8 @@ html, body {
   padding: 0;
   overflow: hidden;
 }
+
+
 
 .left-column, .middle-column, .right-column {
   flex: 1;
@@ -59,11 +61,18 @@ html, body {
 }
 
 .left-column, .middle-column {
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #f0f0f0;
 }
 
 .left-column {
     max-width: 30%;
+}
+.right-column {
+  max-width: 30%;
+}
+.middle-column {
+  max-width: 40%;
+  background: #fafafa;
 }
 .content-wrapper {
   width: 100%;
@@ -79,49 +88,210 @@ html, body {
 }
 
 .presentation {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 h1 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-family: 'GT-Bold';
 }
 
 p {
-  font-size: 1rem;
-  margin-bottom: 1.1rem;
+  font-size: 0.9rem;
   line-height: 1.6;
-  font-family: 'GT-Light';
+  font-family: 'Inter';
+  font-weight: 300;
 }
 
-.testimonial-grid, .project-grid {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1rem;
+
+.menu {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
+.icon-link {
+  color: #333; /* Couleur par défaut */
+  transition: color 0.2s ease;
+  padding: 4px;
+}
+
+.icon-link:hover {
+  color: #000; /* Couleur au survol */
+  background-color: #f0f0f0;
+  border-radius: 20%;
+}
+
+/* Les SVG utiliseront la couleur définie par currentColor */
+.icon-link svg {
+  stroke: currentColor;
+}
+
+blockquote{
+  p{
+    padding-bottom: 1rem;
+  }
+  cite{
+    font-family: 'GT-Bold';
+    font-size: 1rem;
+    color: #333;
+    margin-top: 1rem;
+    svg{
+      margin-left: 1rem;
+    }
+  }
+}
+
+.commitment{
+  a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    font-family: 'GT-Medium';
+    color: #333;
+    
+    .spans-container {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    &:hover{
+      color: #333;
+    }
+  }
+}
+
+
+.companies-list {
+  margin-top: 2rem;
+}
+
+.company-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.company-name {
+  font-family: 'GT-Medium';
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  justify-content: space-between;
+  transition: padding 0.3s ease;
+  &:hover{
+    background-color: #f5f5f5;
+    padding: 12px;
+ 
+  }
+}
+
+.company-roles {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.company-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  svg{
+    padding-top: 3px;
+    color: #b0b0b0;
+    transition: transform 0.1s ease;
+  }
+  &:hover{
+    svg{
+      color: #000;
+      transform:translateY(-2px);
+      transform:translateX(2px);
+    }
+  }
+}
+
+.role-tags {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.company-role {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #f5f5f5;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-family: 'GT-Medium';
+  color: #000;
+  letter-spacing: 0.1em;
+}
+
+
+.company-role:hover::after {
+  transform: scaleX(1);
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.company-link:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+.testimonial-header{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  span{
+    font-family: 'GT-Medium';
+    a{
+      font-family: 'GT-Light';
+      color: #333;
+      &:hover{
+        color: #333;
+        text-decoration: underline;
+      }
+    }
+  }
+}
 .testimonial-card {
   background: white;
-  padding: 1.5rem;
   border-radius: 8px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .testimonial-avatar {
-  width: 50px;
-  height: 50px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  margin-bottom: 1rem;
 }
 
 .testimonial-author {
-  display: block;
-  margin-top: 0.5rem;
-  font-weight: 500;
+  display: block; 
 }
 h2{
     font-family: 'GT-Bold';
-    font-size: 1.2rem;
+    font-size: 1.1rem;
  }
 .project-grid {
   display: grid;
@@ -247,49 +417,6 @@ h2{
   to { transform: scale(1); }
 }
 
-/* Ajustement pour le responsive */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .left-column, .middle-column, .right-column {
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .creative-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .image-preview.wide,
-  .image-preview.tall,
-  .image-preview.big {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-}
-
-.email-icon {
-  fill: black;
-  transition: fill 0.3s ease;
-}
-
-.email-icon:hover {
-  fill: #ff0000;
-}
-
-.linkedin-icon {
-  fill: black;
-  transition: fill 0.3s ease;
-}
-
-.linkedin-icon:hover {
-  fill: #ff0000;
-}
 
 /* Styles pour le défilement des logos */
 .logo-scroll-container {
@@ -351,19 +478,30 @@ h2{
   margin-bottom: 1rem;
 }
 
-.menu {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-/* Modification des styles de texte */
-p, h1, h2, .testimonial-author, .project-card span {
-  color: black;
-}
-
 /* Modification des cartes */
 .testimonial-card, .project-card {
   background: white;
   color: black;
+}
+
+/* Ajustement pour le responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .left-column, .middle-column, .right-column {
+    max-width: 100%;
+    height: auto;
+    min-height: fit-content;
+    overflow-y: visible;
+    flex: none;
+    padding: 20px;
+  }
+
+
 }
