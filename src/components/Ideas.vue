@@ -41,6 +41,7 @@ interface Idea {
   title: string
   description: string
   media_url: string
+  created_at: string
 }
 
 const ideas = ref<Idea[]>([])
