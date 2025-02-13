@@ -91,6 +91,7 @@ interface Idea {
   description: string
   media_url?: string
   user_id?: string
+  created_at?: string
 }
 
 const ideas = ref<Idea[]>([])
@@ -180,7 +181,9 @@ const editIdea = (idea: Idea) => {
   currentId.value = idea.id || null
 }
 
-const deleteIdea = async (id: number) => {
+const deleteIdea = async (id: number | undefined) => {
+  if (!id) return;
+  
   const idea = ideas.value.find(i => i.id === id)
   
   if (idea?.media_url && isImage(idea.media_url)) {
@@ -225,7 +228,9 @@ const isVideo = (url?: string) => {
   return url.includes('youtube.com') || url.includes('vimeo.com')
 }
 
-const getEmbedUrl = (url: string) => {
+const getEmbedUrl = (url: string | undefined): string => {
+  if (!url) return '';
+  
   if (url.includes('youtube.com')) {
     const videoId = url.split('v=')[1]
     return `https://www.youtube.com/embed/${videoId}`

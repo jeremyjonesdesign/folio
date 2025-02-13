@@ -80,7 +80,15 @@ import { supabase } from '@/lib/supabase'
 import AdminSidebar from '@/components/AdminSidebar.vue'
 
 interface Testimonial {
-  id?: string
+  id: string
+  author: string
+  text: string
+  image_url?: string
+  position?: string
+  link_url?: string
+}
+
+interface NewTestimonial {
   author: string
   text: string
   image_url?: string
@@ -89,7 +97,7 @@ interface Testimonial {
 }
 
 const testimonials = ref<Testimonial[]>([])
-const newTestimonial = ref<Testimonial>({
+const newTestimonial = ref<NewTestimonial>({
   author: '',
   text: '',
   position: '',

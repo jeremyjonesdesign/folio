@@ -25,6 +25,7 @@ interface Testimonial {
   text: string
   image_url: string
   position: string
+  link_url: string
 }
 
 const testimonials = ref<Testimonial[]>([])
