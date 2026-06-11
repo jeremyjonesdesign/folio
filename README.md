@@ -1,61 +1,22 @@
-# jj
+# folio
 
-This template should help get you started developing with Vue 3 in Vite.
+jeremy.design — portfolio. Black & white, monospace, interactive terminal, zero framework, zero dependency.
 
-## Recommended IDE Setup
+## Run
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+bun server.ts          # → http://localhost:3025
 ```
 
-### Compile and Hot-Reload for Development
+Or any static server — it's just `index.html` + `style.css` + `app.js` + `data.js`.
 
-```sh
-npm run dev
-```
+## Edit content
 
-### Type-Check, Compile and Minify for Production
+Everything lives in **`data.js`** (bio, work history, projects, links). No build step.
 
-```sh
-npm run build
-```
+## Easter eggs
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+`sudo hire-me` · `vim` · `:q!` · `hx` · `rm` · `exit` · `theme` — and `/` focuses the terminal from anywhere.
 
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+---
+*The previous Vue 3 version lives on the `legacy-vue` branch.*

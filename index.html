@@ -1,13 +1,78 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jeremy.design — product designer · product maker</title>
+<meta name="description" content="Jeremy Jones — product designer & maker. 6 years designing Cycle (acquired by Atlassian), now at Contentsquare. Ships his own products at night.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='black'/><text x='2' y='12' font-family='monospace' font-size='10' fill='white'>JJ</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="crt" aria-hidden="true"></div>
+
+<main class="wrap">
+
+  <!-- ── 00 · BOOT + TERMINAL ───────────────────────────── -->
+  <section id="terminal-section">
+    <pre id="banner" aria-label="JEREMY"></pre>
+    <p class="tagline"><span id="tagline-text"></span><span class="cursor" id="tagline-cursor">█</span></p>
+
+    <div id="terminal" tabindex="0">
+      <div id="output"></div>
+      <div class="input-line">
+        <span class="prompt">guest@jeremy.design:~$</span>
+        <input id="cmd" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="terminal input">
+        <span class="cursor input-cursor">█</span>
+      </div>
+    </div>
+    <p class="hint">// type <button class="cmdlink" data-cmd="help">help</button> — or scroll like a normal person</p>
+  </section>
+
+  <!-- ── 01 · INDEX ─────────────────────────────────────── -->
+  <nav class="index" aria-label="index">
+    <a href="#about">01 ABOUT</a>
+    <a href="#work">02 WORK</a>
+    <a href="#projects">03 PROJECTS</a>
+    <a href="#contact">04 CONTACT</a>
+  </nav>
+
+  <!-- ── 01 · ABOUT ─────────────────────────────────────── -->
+  <section id="about">
+    <h2><span class="sec-num">01</span> ABOUT<span class="h-slash">_</span></h2>
+    <div id="about-body"></div>
+    <blockquote id="quote"></blockquote>
+  </section>
+
+  <!-- ── 02 · WORK ──────────────────────────────────────── -->
+  <section id="work">
+    <h2><span class="sec-num">02</span> WORK<span class="h-slash">_</span></h2>
+    <div id="work-rows" class="rows"></div>
+  </section>
+
+  <!-- ── 03 · PROJECTS ──────────────────────────────────── -->
+  <section id="projects">
+    <h2><span class="sec-num">03</span> PROJECTS<span class="h-slash">_</span></h2>
+    <p class="sub">// designed AND built. that's the whole point.</p>
+    <div id="project-rows" class="rows"></div>
+    <p class="more" id="more"></p>
+  </section>
+
+  <!-- ── 04 · CONTACT ───────────────────────────────────── -->
+  <section id="contact">
+    <h2><span class="sec-num">04</span> CONTACT<span class="h-slash">_</span></h2>
+    <div id="contact-rows" class="rows"></div>
+  </section>
+
+  <footer>
+    <span>© 2026 jeremy.design</span>
+    <span>built with vanilla everything · 0 framework · 0 dependency</span>
+    <span>served from ~/projects/folio · <span class="blink">▌</span></span>
+  </footer>
+
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
 </html>
