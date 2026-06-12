@@ -2,5 +2,13 @@
   "framework": null,
   "buildCommand": null,
   "installCommand": null,
-  "outputDirectory": null
+  "outputDirectory": null,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "jeremy.design" }],
+      "destination": "https://www.jeremy.design/:path*",
+      "permanent": true
+    }
+  ]
 }

@@ -12,7 +12,13 @@ Or any static server — it's just `index.html` + `style.css` + `app.js` + `data
 
 ## Edit content
 
-Everything lives in **`data.js`** (bio, work history, projects, links). No build step.
+Everything lives in **`data.js`** (bio, work history, projects, links). After editing it, run:
+
+```bash
+bun prerender.mjs      # re-injects the content into index.html (SEO — static HTML)
+```
+
+That's the only "build step": it copies the rendered sections between the `<!-- ssr:* -->` markers of `index.html` so crawlers get real text without executing JS. `app.js` re-renders the same markup at runtime.
 
 ## Easter eggs
 
