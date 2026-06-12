@@ -33,7 +33,7 @@ a:hover { background: var(--fg); color: var(--bg); text-decoration: none; }
 
 /* ── banner ─────────────────────────────────────────────── */
 #banner {
-  font-size: clamp(5px, 1.6vw, 13px);
+  font-size: clamp(12px, 4.5vw, 30px);
   line-height: 1.2;
   white-space: pre;
   margin-bottom: 10px;
@@ -99,7 +99,22 @@ blockquote {
   border-left: 2px solid var(--fg);
   color: var(--dim); font-style: italic;
 }
-.kudo { margin-top: 20px; }
+.kudo {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0 20px;
+  align-items: start;
+  margin-top: 28px;
+}
+.kudo blockquote { margin-top: 0; }
+.kudo-avatar canvas {
+  display: block;
+  width: 64px; height: 64px;
+  image-rendering: pixelated;
+  border: 1px solid var(--fg);
+  filter: grayscale(1);
+}
+html.invert .kudo-avatar canvas { filter: grayscale(1) invert(1); }
 blockquote .author { font-style: normal; }
 
 /* ── rows (work / projects / contact) ───────────────────── */
@@ -122,6 +137,22 @@ a.row:hover * { color: var(--bg); }
 a.row:hover .c4 { border-color: var(--bg); }
 .more { color: var(--dim); margin-top: 14px; font-size: 13px; }
 
+/* ── contact + pixel envelope ───────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px 48px;
+  align-items: center;
+}
+.envelope { text-decoration: none; padding: 6px; }
+.envelope pre {
+  font-size: clamp(7px, 1.4vw, 13px);
+  line-height: 1;
+  white-space: pre;
+}
+.envelope:hover { background: var(--fg); }
+.envelope:hover pre { color: var(--bg); }
+
 /* ── footer ─────────────────────────────────────────────── */
 footer {
   margin-top: 96px; padding-top: 16px;
@@ -135,6 +166,11 @@ footer {
   .row { grid-template-columns: 1fr auto; }
   .row .c1 { grid-column: 1 / -1; }
   .row .c3 { grid-column: 1 / -1; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .envelope { justify-self: center; }
+  .envelope pre { font-size: 9px; }
+  .kudo { grid-template-columns: 48px 1fr; gap: 0 14px; }
+  .kudo-avatar canvas { width: 48px; height: 48px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cursor, .blink, .h-slash { animation: none; }

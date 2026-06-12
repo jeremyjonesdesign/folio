@@ -4,12 +4,12 @@
 "use strict";
 
 const BANNER = String.raw`
-     ██╗███████╗██████╗ ███████╗███╗   ███╗██╗   ██╗
-     ██║██╔════╝██╔══██╗██╔════╝████╗ ████║╚██╗ ██╔╝
-     ██║█████╗  ██████╔╝█████╗  ██╔████╔██║ ╚████╔╝
-██   ██║██╔══╝  ██╔══██╗██╔══╝  ██║╚██╔╝██║  ╚██╔╝
-╚█████╔╝███████╗██║  ██║███████╗██║ ╚═╝ ██║   ██║
- ╚════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝   ╚═╝`.replace(/^\n/, "");
+ ██████╗  ██████╗
+██╔════╝ ██╔════╝
+██║  ███╗██║  ███╗
+██║   ██║██║   ██║
+╚██████╔╝╚██████╔╝
+ ╚═════╝  ╚═════╝`.replace(/^\n/, "");
 
 const $ = (s) => document.querySelector(s);
 const out = $("#output");
@@ -40,8 +40,31 @@ $("#project-rows").innerHTML = DATA.projects.map((p) => `
   </a>`).join("");
 $("#more").textContent = "// " + DATA.more;
 
-$("#kudos-list").innerHTML = DATA.kudos.map((k) => `
-  <blockquote class="kudo">“${esc(k.text)}”<br><span class="author">— ${esc(k.who)} · ${esc(k.org)}</span></blockquote>`).join("");
+$("#kudos-list").innerHTML = DATA.kudos.map((k, i) => `
+  <figure class="kudo">
+    <div class="kudo-avatar">
+      <img id="kudo-src-${i}" src="${k.avatar}" alt="" hidden>
+      <canvas id="kudo-px-${i}" role="img" aria-label="${esc(k.who)}"></canvas>
+    </div>
+    <blockquote>“${esc(k.text)}”<br><span class="author">— ${esc(k.who)} · ${esc(k.org)}</span></blockquote>
+  </figure>`).join("");
+
+/* pixelate kudos avatars — pixelit + 5-shade mono palette */
+const PIX_PALETTE = [[0, 0, 0], [68, 68, 68], [136, 136, 136], [204, 204, 204], [255, 255, 255]];
+DATA.kudos.forEach((k, i) => {
+  const img = $(`#kudo-src-${i}`);
+  const cv = $(`#kudo-px-${i}`);
+  const pixelate = () => {
+    // ~24 blocks across, whatever the source resolution
+    const scale = Math.max(1, Math.min(50, Math.round(2400 / img.naturalWidth)));
+    new pixelit({ from: img, to: cv })
+      .setScale(scale).setPalette(PIX_PALETTE)
+      .draw().pixelate().convertPalette();
+  };
+  img.onerror = () => { cv.parentElement.style.visibility = "hidden"; };
+  if (img.complete && img.naturalWidth) pixelate();
+  else img.onload = pixelate;
+});
 
 $("#contact-rows").innerHTML = [
   ["email", DATA.email, `mailto:${DATA.email}`],
@@ -59,7 +82,7 @@ $("#contact-rows").innerHTML = [
 /* ── banner + tagline typing ──────────────────────────── */
 const banner = $("#banner");
 const tag = $("#tagline-text");
-const TAGLINE = `${DATA.name} — ${DATA.title} · ${DATA.location}`;
+const TAGLINE = DATA.title;
 
 function typeBanner(then) {
   if (reduced) { banner.textContent = BANNER; tag.textContent = TAGLINE; then(); return; }
