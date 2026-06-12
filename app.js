@@ -42,11 +42,12 @@ $("#more").textContent = "// " + DATA.more;
 
 $("#kudos-list").innerHTML = DATA.kudos.map((k, i) => `
   <figure class="kudo">
-    <div class="kudo-avatar">
+    <figcaption class="kudo-head">
       <img id="kudo-src-${i}" src="${k.avatar}" alt="" hidden>
       <canvas id="kudo-px-${i}" role="img" aria-label="${esc(k.who)}"></canvas>
-    </div>
-    <blockquote>“${esc(k.text)}”<br><span class="author">— ${esc(k.who)} · ${esc(k.org)}</span></blockquote>
+      <span class="kudo-id"><b>${esc(k.who)}</b><span class="kudo-org">${esc(k.org)}</span></span>
+    </figcaption>
+    <blockquote>“${esc(k.text)}”</blockquote>
   </figure>`).join("");
 
 /* pixelate kudos avatars — pixelit + 5-shade mono palette */
@@ -232,7 +233,7 @@ typeBanner(() => {
     ["[ OK ] loading design system… found: black, white.", "dim"],
     ["[ OK ] 17 years of design experience loaded (since 2008)", "dim"],
     ["[ OK ] mounting ~/projects (26 entries)", "dim"],
-    ["[ OK ] 6 years @ cycle.app → exit: acquired (atlassian)", "dim"],
+    ["[ OK ] 3 years @ cycle.app → exit: acquired (atlassian)", "dim"],
     ["[ OK ] current: contentsquare", "dim"],
     ["[ OK ] side-projects daemon: running", "dim"],
     "",

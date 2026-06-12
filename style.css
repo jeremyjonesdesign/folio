@@ -99,22 +99,31 @@ blockquote {
   border-left: 2px solid var(--fg);
   color: var(--dim); font-style: italic;
 }
-.kudo {
+/* kudos bento */
+#kudos-list {
   display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 0 20px;
-  align-items: start;
-  margin-top: 28px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
-.kudo blockquote { margin-top: 0; }
-.kudo-avatar canvas {
+.kudo { border: 1px solid var(--fg); padding: 18px; }
+.kudo:first-child { grid-column: span 2; }
+.kudo-head { display: flex; align-items: center; gap: 12px; }
+.kudo-head canvas {
   display: block;
-  width: 64px; height: 64px;
+  width: 48px; height: 48px;
   image-rendering: pixelated;
   border: 1px solid var(--fg);
   filter: grayscale(1);
 }
-html.invert .kudo-avatar canvas { filter: grayscale(1) invert(1); }
+html.invert .kudo-head canvas { filter: grayscale(1) invert(1); }
+.kudo-id { display: flex; flex-direction: column; line-height: 1.5; }
+.kudo-org { color: var(--dim); font-size: 13px; }
+.kudo blockquote {
+  border-left: none;
+  padding-left: 0;
+  margin-top: 14px;
+  font-size: 14px;
+}
 blockquote .author { font-style: normal; }
 
 /* ── rows (work / projects / contact) ───────────────────── */
@@ -161,8 +170,8 @@ footer {
   .row { grid-template-columns: 1fr auto; }
   .row .c1 { grid-column: 1 / -1; }
   .row .c3 { grid-column: 1 / -1; }
-  .kudo { grid-template-columns: 48px 1fr; gap: 0 14px; }
-  .kudo-avatar canvas { width: 48px; height: 48px; }
+  #kudos-list { grid-template-columns: 1fr; }
+  .kudo:first-child { grid-column: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cursor, .blink, .h-slash { animation: none; }

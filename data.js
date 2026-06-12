@@ -11,7 +11,7 @@ const DATA = {
   bio: [
     "Multidisciplinary product designer. 17+ years in the industry — started in 2008.",
     "From IC to Head of. SaaS, gaming, healthcare & fashion. USA & Europe.",
-    "6 years designing Cycle (cycle.app), until its acquisition by Atlassian.",
+    "3 years designing Cycle (cycle.app), until its acquisition by Atlassian.",
     "Now at Contentsquare. Nights & weekends: I design AND build my own products.",
   ],
   quote: {
@@ -22,15 +22,15 @@ const DATA = {
     {
       period: "2025 — now",
       company: "Contentsquare",
-      role: "Product Designer",
+      role: "Innovation AI Product",
       note: "Digital experience analytics.",
       url: "https://contentsquare.com",
     },
     {
-      period: "2019 — 2025",
+      period: "2022 — 2025",
       company: "Cycle",
       role: "Product Designer",
-      note: "6 years building cycle.app — AI-powered product feedback. Acquired by Atlassian.",
+      note: "3 years building cycle.app — AI-powered product feedback. Acquired by Atlassian.",
       url: "https://cycle.app",
     },
     {
@@ -51,13 +51,13 @@ const DATA = {
       period: "2008 — now",
       company: "Independent",
       role: "Visual Product Designer",
-      note: "Arcade.ai, Facebook, Activision, Hermès, Chartboost, Voodoo, Spendesk, June, Etam, Edenred…",
+      note: "Arcads, Facebook, Activision, Hermès, Chartboost, Voodoo, Spendesk, June, Etam, Edenred…",
       url: "https://web.archive.org/web/20250406145749/https://jeremy.design/",
     },
   ],
   education: "Institut Ingemedia — 2008-2010",
   clients: [
-    "Arcade.ai", "Facebook", "Activision", "Hermès", "Chartboost", "Voodoo", "Spendesk",
+    "Arcads", "Facebook", "Activision", "Hermès", "Chartboost", "Voodoo", "Spendesk",
     "Typology", "June", "Async", "STid", "Brigad", "Mozza", "Hexa",
     "Etam", "Immosquare", "Edenred", "Tchek",
   ],
