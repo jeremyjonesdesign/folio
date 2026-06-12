@@ -29,14 +29,14 @@ const DATA = {
     {
       period: "2022 — 2025",
       company: "Cycle",
-      role: "Product Designer",
+      role: "Head of Product Design",
       note: "3 years building cycle.app — AI-powered product feedback. Acquired by Atlassian.",
       url: "https://www.atlassian.com",
     },
     {
       period: "independent",
       company: "Async",
-      role: "Product Designer",
+      role: "Head of Product Design",
       note: "Voice-first collaboration, with Ilan Abehassera.",
       url: "https://async.com",
     },
