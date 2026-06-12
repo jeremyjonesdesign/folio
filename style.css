@@ -99,6 +99,7 @@ blockquote {
   border-left: 2px solid var(--fg);
   color: var(--dim); font-style: italic;
 }
+.kudo { margin-top: 20px; }
 blockquote .author { font-style: normal; }
 
 /* ── rows (work / projects / contact) ───────────────────── */

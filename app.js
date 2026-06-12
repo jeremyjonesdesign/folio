@@ -40,10 +40,14 @@ $("#project-rows").innerHTML = DATA.projects.map((p) => `
   </a>`).join("");
 $("#more").textContent = "// " + DATA.more;
 
+$("#kudos-list").innerHTML = DATA.kudos.map((k) => `
+  <blockquote class="kudo">“${esc(k.text)}”<br><span class="author">— ${esc(k.who)} · ${esc(k.org)}</span></blockquote>`).join("");
+
 $("#contact-rows").innerHTML = [
   ["email", DATA.email, `mailto:${DATA.email}`],
   ["github", "@" + DATA.handle, DATA.links.github],
   ["linkedin", "jeremy-jones-designer", DATA.links.linkedin],
+  ["dribbble", "jeijones", DATA.links.dribbble],
 ].map(([k, v, href]) => `
   <a class="row" href="${href}" target="_blank" rel="noopener">
     <span class="c1">${k}</span>
@@ -98,6 +102,8 @@ const FILES = {
     `linkedin: <a href="${DATA.links.linkedin}" target="_blank" rel="noopener">${DATA.links.linkedin}</a>`,
   ],
   "quote.txt": () => [`“${esc(DATA.quote.text)}” — ${esc(DATA.quote.author)}`],
+  "clients.txt": () => [DATA.clients.map(esc).join(" · "), ["(2008 → 2025, independent era)", "dim"]],
+  "education.txt": () => [esc(DATA.education)],
 };
 
 const COMMANDS = {
@@ -108,6 +114,8 @@ const COMMANDS = {
     "  cat <file>        read a file (try: cat about.txt)",
     "  projects          list shipped things",
     "  work              employment history",
+    "  clients           17 years of logos",
+    "  kudos             what they say about me",
     "  open <project>    open a project (try: open openmat)",
     "  contact           reach out",
     "  theme             invert the universe",
@@ -119,9 +127,16 @@ const COMMANDS = {
     "drwxr-xr-x  projects/",
     "drwxr-xr-x  work/",
     "-rw-r--r--  about.txt",
+    "-rw-r--r--  clients.txt",
     "-rw-r--r--  contact.txt",
+    "-rw-r--r--  education.txt",
     "-rw-r--r--  quote.txt",
   ],
+  clients: () => FILES["clients.txt"](),
+  kudos: () => {
+    location.hash = "#kudos";
+    return DATA.kudos.map((k) => [`  “${esc(k.text.slice(0, 80))}…” — ${esc(k.who)} (${esc(k.org)})`, "dim"]).concat([["", ""], ["→ scrolled you to 04 KUDOS", "dim"]]);
+  },
   projects: () => {
     location.hash = "#projects";
     return DATA.projects.map((p) => `  ${p.name.padEnd(18)} ${esc(p.desc)}`).concat([["", ""], ["→ scrolled you to 03 PROJECTS", "dim"]]);
@@ -205,6 +220,7 @@ document.querySelectorAll(".cmdlink").forEach((b) =>
 typeBanner(() => {
   printSlow([
     ["[ OK ] loading design system… found: black, white.", "dim"],
+    ["[ OK ] 17 years of design experience loaded (since 2008)", "dim"],
     ["[ OK ] mounting ~/projects (26 entries)", "dim"],
     ["[ OK ] 6 years @ cycle.app → exit: acquired (atlassian)", "dim"],
     ["[ OK ] current: contentsquare", "dim"],
