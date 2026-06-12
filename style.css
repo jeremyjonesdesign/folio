@@ -1,11 +1,16 @@
 /* ──────────────────────────────────────────────────────────
    jeremy.design — black & white. monospace. nothing else.
    ────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Departure Mono";
+  src: url("fonts/DepartureMono-Regular.woff2") format("woff2");
+  font-display: swap;
+}
 :root {
   --bg: #000;
   --fg: #fff;
   --dim: #888;
-  --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+  --mono: "Departure Mono", ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
 }
 html.invert { --bg: #fff; --fg: #000; --dim: #666; }
 
@@ -135,26 +140,30 @@ a.row:hover * { color: var(--bg); }
 a.row:hover .c4 { border-color: var(--bg); }
 .more { color: var(--dim); margin-top: 14px; font-size: 13px; }
 
-/* ── contact = one big pixel envelope ───────────────────── */
-.contact-grid { display: flex; justify-content: center; padding: 24px 0; }
-.envelope { text-decoration: none; padding: 8px; }
+/* ── contact = one big pixel envelope, full width ───────── */
+.contact-grid { padding: 12px 0; }
+.envelope { display: block; text-decoration: none; }
 .envelope pre {
-  font-size: clamp(9px, 2.2vw, 18px);
+  font-size: min(calc((100vw - 40px) / 19.2), 46px);
   line-height: 1;
   white-space: pre;
+  text-align: center;
 }
 .envelope:hover { background: var(--fg); }
 .envelope:hover pre { color: var(--bg); }
-.linkedin-cta { text-align: center; margin-top: 8px; }
-.linkedin-cta a {
-  display: inline-block;
+
+/* ── linkedin icon, top-right ───────────────────────────── */
+.li-link {
+  position: absolute;
+  top: 20px; right: 20px;
+  z-index: 10;
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
   border: 1px solid var(--fg);
-  padding: 10px 24px;
-  font-weight: 700;
-  letter-spacing: .08em;
+  font-weight: 700; font-size: 17px;
   text-decoration: none;
 }
-.linkedin-cta a:hover { background: var(--fg); color: var(--bg); }
+.li-link:hover { background: var(--fg); color: var(--bg); }
 
 /* ── footer ─────────────────────────────────────────────── */
 footer {
