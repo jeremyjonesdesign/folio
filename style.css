@@ -137,16 +137,11 @@ a.row:hover * { color: var(--bg); }
 a.row:hover .c4 { border-color: var(--bg); }
 .more { color: var(--dim); margin-top: 14px; font-size: 13px; }
 
-/* ── contact + pixel envelope ───────────────────────────── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px 48px;
-  align-items: center;
-}
-.envelope { text-decoration: none; padding: 6px; }
+/* ── contact = one big pixel envelope ───────────────────── */
+.contact-grid { display: flex; justify-content: center; padding: 24px 0; }
+.envelope { text-decoration: none; padding: 8px; }
 .envelope pre {
-  font-size: clamp(7px, 1.4vw, 13px);
+  font-size: clamp(9px, 2.2vw, 18px);
   line-height: 1;
   white-space: pre;
 }
@@ -166,9 +161,6 @@ footer {
   .row { grid-template-columns: 1fr auto; }
   .row .c1 { grid-column: 1 / -1; }
   .row .c3 { grid-column: 1 / -1; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .envelope { justify-self: center; }
-  .envelope pre { font-size: 9px; }
   .kudo { grid-template-columns: 48px 1fr; gap: 0 14px; }
   .kudo-avatar canvas { width: 48px; height: 48px; }
 }

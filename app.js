@@ -4,12 +4,12 @@
 "use strict";
 
 const BANNER = String.raw`
- ██████╗  ██████╗
-██╔════╝ ██╔════╝
-██║  ███╗██║  ███╗
-██║   ██║██║   ██║
-╚██████╔╝╚██████╔╝
- ╚═════╝  ╚═════╝`.replace(/^\n/, "");
+     ██╗     ██╗
+     ██║     ██║
+     ██║     ██║
+██   ██║██   ██║
+╚█████╔╝╚█████╔╝
+ ╚════╝  ╚════╝`.replace(/^\n/, "");
 
 const $ = (s) => document.querySelector(s);
 const out = $("#output");
@@ -66,19 +66,6 @@ DATA.kudos.forEach((k, i) => {
   else img.onload = pixelate;
 });
 
-$("#contact-rows").innerHTML = [
-  ["email", DATA.email, `mailto:${DATA.email}`],
-  ["github", "@" + DATA.handle, DATA.links.github],
-  ["linkedin", "jeremy-jones-designer", DATA.links.linkedin],
-  ["dribbble", "jeijones", DATA.links.dribbble],
-].map(([k, v, href]) => `
-  <a class="row" href="${href}" target="_blank" rel="noopener">
-    <span class="c1">${k}</span>
-    <span class="c2">${esc(v)}</span>
-    <span class="c3"></span>
-    <span class="c4">↗</span>
-  </a>`).join("");
-
 /* ── banner + tagline typing ──────────────────────────── */
 const banner = $("#banner");
 const tag = $("#tagline-text");
@@ -125,7 +112,7 @@ const FILES = {
     `linkedin: <a href="${DATA.links.linkedin}" target="_blank" rel="noopener">${DATA.links.linkedin}</a>`,
   ],
   "quote.txt": () => [`“${esc(DATA.quote.text)}” — ${esc(DATA.quote.author)}`],
-  "clients.txt": () => [DATA.clients.map(esc).join(" · "), ["(2008 → 2025, independent era)", "dim"]],
+  "clients.txt": () => [DATA.clients.map(esc).join(" · "), ["(2008 → now, independent era)", "dim"]],
   "education.txt": () => [esc(DATA.education)],
 };
 

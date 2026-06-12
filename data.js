@@ -35,13 +35,6 @@ const DATA = {
     },
     {
       period: "independent",
-      company: "Arcade.ai",
-      role: "Product Designer",
-      note: "Design unique products with AI and artisans.",
-      url: "https://www.arcade.ai",
-    },
-    {
-      period: "independent",
       company: "Async",
       role: "Product Designer",
       note: "Voice-first collaboration, with Ilan Abehassera.",
@@ -55,16 +48,16 @@ const DATA = {
       url: "https://typology.com",
     },
     {
-      period: "2008 — 2025",
+      period: "2008 — now",
       company: "Independent",
       role: "Visual Product Designer",
-      note: "Facebook, Activision, Hermès, Chartboost, Voodoo, Spendesk, June, Etam, Edenred…",
+      note: "Arcade.ai, Facebook, Activision, Hermès, Chartboost, Voodoo, Spendesk, June, Etam, Edenred…",
       url: "https://web.archive.org/web/20250406145749/https://jeremy.design/",
     },
   ],
   education: "Institut Ingemedia — 2008-2010",
   clients: [
-    "Facebook", "Activision", "Hermès", "Chartboost", "Voodoo", "Spendesk",
+    "Arcade.ai", "Facebook", "Activision", "Hermès", "Chartboost", "Voodoo", "Spendesk",
     "Typology", "June", "Async", "STid", "Brigad", "Mozza", "Hexa",
     "Etam", "Immosquare", "Edenred", "Tchek",
   ],
