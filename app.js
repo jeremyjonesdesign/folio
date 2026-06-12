@@ -23,13 +23,16 @@ function esc(s) { const d = document.createElement("div"); d.textContent = s; re
 $("#about-body").innerHTML = DATA.bio.map((l) => `<p>${esc(l)}</p>`).join("");
 $("#quote").innerHTML = `“${esc(DATA.quote.text)}”<br><span class="author">— ${esc(DATA.quote.author)}</span>`;
 
-$("#work-rows").innerHTML = DATA.work.map((w) => `
-  <a class="row" href="${w.url}" target="_blank" rel="noopener">
+$("#work-rows").innerHTML = DATA.work.map((w) => {
+  const inner = `
     <span class="c1">${esc(w.period)}</span>
     <span class="c2">${esc(w.company)}</span>
     <span class="c3">${esc(w.role)} — ${esc(w.note)}</span>
-    <span class="c4">↗</span>
-  </a>`).join("");
+    ${w.url ? '<span class="c4">↗</span>' : ""}`;
+  return w.url
+    ? `<a class="row" href="${w.url}" target="_blank" rel="noopener">${inner}</a>`
+    : `<div class="row">${inner}</div>`;
+}).join("");
 
 $("#project-rows").innerHTML = DATA.projects.map((p) => `
   <a class="row" href="${p.url}" target="_blank" rel="noopener">

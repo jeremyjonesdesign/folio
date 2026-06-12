@@ -156,6 +156,16 @@ a.row:hover .c4 { border-color: var(--bg); }
 }
 .envelope:hover { background: var(--fg); }
 .envelope:hover pre { color: var(--bg); }
+.linkedin-cta { text-align: center; margin-top: 8px; }
+.linkedin-cta a {
+  display: inline-block;
+  border: 1px solid var(--fg);
+  padding: 10px 24px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+.linkedin-cta a:hover { background: var(--fg); color: var(--bg); }
 
 /* ── footer ─────────────────────────────────────────────── */
 footer {
