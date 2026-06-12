@@ -74,17 +74,6 @@ a:hover { background: var(--fg); color: var(--bg); text-decoration: none; }
 }
 .cmdlink:hover { background: var(--fg); color: var(--bg); }
 
-/* ── index nav ──────────────────────────────────────────── */
-.index {
-  display: flex; flex-wrap: wrap; gap: 4px 28px;
-  margin: 72px 0 24px;
-  padding: 12px 0;
-  border-top: 1px solid var(--fg);
-  border-bottom: 1px solid var(--fg);
-}
-.index a { text-decoration: none; letter-spacing: .08em; }
-.index a:hover { background: var(--fg); color: var(--bg); }
-
 /* ── sections ───────────────────────────────────────────── */
 section { margin-top: 72px; scroll-margin-top: 24px; }
 h2 { font-size: 15px; font-weight: 700; letter-spacing: .14em; margin-bottom: 20px; }
