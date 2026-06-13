@@ -180,9 +180,21 @@ footer {
 
 /* ── responsive ─────────────────────────────────────────── */
 @media (max-width: 720px) {
-  .row { grid-template-columns: 1fr auto; }
-  .row .c1 { grid-column: 1 / -1; }
-  .row .c3 { grid-column: 1 / -1; }
+  /* stack each row: period → name → description → centered CTA */
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  .row .c4 {
+    align-self: center;
+    margin-top: 10px;
+    padding: 5px 16px;
+  }
+  /* full labels on mobile — desktop keeps the bare icon / status */
+  #work .row .c4::before { content: "visit "; }
+  #projects .row .c4::after { content: " ↗"; }
   #kudos-list { grid-template-columns: 1fr; }
   .kudo:first-child { grid-column: auto; }
 }
