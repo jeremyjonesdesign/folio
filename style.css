@@ -188,9 +188,10 @@ footer {
     gap: 3px;
   }
   .row .c4 {
-    align-self: center;
+    align-self: stretch;
+    text-align: center;
     margin-top: 10px;
-    padding: 5px 16px;
+    padding: 6px 16px;
   }
   /* full labels on mobile — desktop keeps the bare icon / status */
   #work .row .c4::before { content: "visit "; }
