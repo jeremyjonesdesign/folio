@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — jeremy.design</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='black'/><text x='2' y='12' font-family='monospace' font-size='10' fill='white'>JJ</text></svg>">
+<link rel="preload" href="/fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="crt" aria-hidden="true"></div>
+
+<main class="wrap">
+  <pre id="banner" aria-label="404">
+██   ██  ██████  ██   ██
+██   ██ ██    ██ ██   ██
+███████ ██    ██ ███████
+     ██ ██    ██      ██
+     ██  ██████       ██</pre>
+  <p class="tagline">segmentation fault — page not found.</p>
+
+  <div id="terminal">
+    <div class="line"><span class="dim">guest@jeremy.design:~$</span> cat <span id="path">that.txt</span></div>
+    <div class="line err">cat: <span id="path2">that.txt</span>: No such file or directory</div>
+    <div class="line"><span class="dim">guest@jeremy.design:~$</span> cd <a href="/">~</a> <span class="dim"># take me home</span></div>
+  </div>
+  <p class="hint">// nothing here. <a href="/">go back to /</a></p>
+</main>
+
+<script>
+  var p = (location.pathname.slice(1) || "that") + "";
+  document.getElementById("path").textContent = p;
+  document.getElementById("path2").textContent = p;
+</script>
+</body>
+</html>

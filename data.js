@@ -77,8 +77,43 @@ const DATA = {
       status: "live",
       url: "https://www.coachingsimple.fr",
     },
+    {
+      id: "summail",
+      name: "Summail",
+      desc: "Inbox triage — your unread, summarized into one morning digest.",
+      stack: "Next.js · Claude API",
+      status: "private",
+    },
+    {
+      id: "tariff",
+      name: "Tariff",
+      desc: "Real-time customs & import-duty calculator for cross-border sellers.",
+      stack: "Next.js · React 19",
+      status: "private",
+    },
+    {
+      id: "benchmark",
+      name: "Benchmark",
+      desc: "Head-to-head harness to score LLMs on your own prompts.",
+      stack: "TypeScript · CLI",
+      status: "private",
+    },
+    {
+      id: "audioletter",
+      name: "AudioLetter",
+      desc: "Turns the newsletters you actually read into a daily audio digest.",
+      stack: "Next.js · TTS",
+      status: "private",
+    },
+    {
+      id: "spellbook",
+      name: "Spellbook",
+      desc: "A versioned prompt library — your best prompts, one keystroke away.",
+      stack: "Astro · MDX",
+      status: "private",
+    },
   ],
-  more: "+ ~20 experiments in ~/projects (summail, tariff, benchmark, audioletter, spellbook…)",
+  more: "+ ~15 more experiments in ~/projects — ask me.",
   kudos: [
     {
       who: "Ilan Abehassera",
@@ -95,7 +130,7 @@ const DATA = {
     {
       who: "Pierre Bascoul",
       org: "Typology",
-      avatar: "img/kudos/pierre.png",
+      avatar: "img/kudos/pierre.jpg",
       text: "Jeremy has been instrumental in the development of our Typology application. Genuine expertise in UX and UI design, contributing at every stage from ideation to execution.",
     },
     {
@@ -107,7 +142,7 @@ const DATA = {
     {
       who: "Jean Davoust",
       org: "STid",
-      avatar: "img/kudos/jean.png",
+      avatar: "img/kudos/jean.jpg",
       text: "Very challenging schedule — Jeremy adapted perfectly to the time constraints and the team needs. He quickly grasps business issues and produces very efficiently.",
     },
   ],

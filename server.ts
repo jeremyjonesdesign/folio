@@ -13,6 +13,7 @@ const types: Record<string, string> = {
   woff2: "font/woff2",
   txt: "text/plain; charset=utf-8",
   xml: "application/xml; charset=utf-8",
+  webmanifest: "application/manifest+json",
 };
 
 Bun.serve({
@@ -24,6 +25,13 @@ Bun.serve({
     if (path.includes("..")) return new Response("nope", { status: 400 });
     const file = Bun.file(root + path);
     if (!(await file.exists())) {
+      const notFound = Bun.file(root + "/404.html");
+      if (await notFound.exists()) {
+        return new Response(notFound, {
+          status: 404,
+          headers: { "content-type": "text/html; charset=utf-8" },
+        });
+      }
       return new Response("404 — try /  (or: curl jeremy.design | less)", {
         status: 404,
         headers: { "content-type": "text/plain; charset=utf-8" },

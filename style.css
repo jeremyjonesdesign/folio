@@ -143,6 +143,8 @@ a.row:hover * { color: var(--bg); }
 .row .c3 { color: var(--dim); }
 .row .c4 { font-size: 12px; border: 1px solid var(--fg); padding: 1px 8px; white-space: nowrap; }
 a.row:hover .c4 { border-color: var(--bg); }
+.row-private { cursor: default; }
+.row-private .c4 { border-style: dashed; }
 .more { color: var(--dim); margin-top: 14px; font-size: 13px; }
 
 /* ── contact = one big pixel envelope, full width ───────── */

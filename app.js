@@ -34,13 +34,16 @@ $("#work-rows").innerHTML = DATA.work.map((w) => {
     : `<div class="row">${inner}</div>`;
 }).join("");
 
-$("#project-rows").innerHTML = DATA.projects.map((p) => `
-  <a class="row" href="${p.url}" target="_blank" rel="noopener">
+$("#project-rows").innerHTML = DATA.projects.map((p) => {
+  const inner = `
     <span class="c1">${esc(p.stack)}</span>
     <span class="c2">${esc(p.name)}</span>
     <span class="c3">${esc(p.desc)}</span>
-    <span class="c4">${esc(p.status)}</span>
-  </a>`).join("");
+    <span class="c4">${esc(p.status)}</span>`;
+  return p.url
+    ? `<a class="row" href="${p.url}" target="_blank" rel="noopener">${inner}</a>`
+    : `<div class="row row-private">${inner}</div>`;
+}).join("");
 $("#more").textContent = "// " + DATA.more;
 
 $("#kudos-list").innerHTML = DATA.kudos.map((k, i) => `
@@ -184,6 +187,7 @@ const COMMANDS = {
     const id = (args[0] || "").toLowerCase();
     const p = DATA.projects.find((x) => x.id === id || x.name.toLowerCase() === id);
     if (!p) return [["usage: open <project>   // " + DATA.projects.map((x) => x.id).join(" · "), "dim"]];
+    if (!p.url) return [[`open: ${esc(p.name)}: permission denied 🔒 (private — ask me)`, "err"]];
     window.open(p.url, "_blank", "noopener");
     return [[`→ opening ${esc(p.name)}…`, "dim"]];
   },

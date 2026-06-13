@@ -25,13 +25,16 @@ const sections = {
       ? `<a class="row" href="${w.url}" target="_blank" rel="noopener">${inner}</a>`
       : `<div class="row">${inner}</div>`;
   }).join(""),
-  projects: DATA.projects.map((p) => `
-  <a class="row" href="${p.url}" target="_blank" rel="noopener">
+  projects: DATA.projects.map((p) => {
+    const inner = `
     <span class="c1">${esc(p.stack)}</span>
     <span class="c2">${esc(p.name)}</span>
     <span class="c3">${esc(p.desc)}</span>
-    <span class="c4">${esc(p.status)}</span>
-  </a>`).join(""),
+    <span class="c4">${esc(p.status)}</span>`;
+    return p.url
+      ? `<a class="row" href="${p.url}" target="_blank" rel="noopener">${inner}</a>`
+      : `<div class="row row-private">${inner}</div>`;
+  }).join(""),
   more: esc("// " + DATA.more),
   kudos: DATA.kudos.map((k, i) => `
   <figure class="kudo">

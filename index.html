@@ -30,6 +30,9 @@
 }
 </script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='black'/><text x='2' y='12' font-family='monospace' font-size='10' fill='white'>JJ</text></svg>">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -92,20 +95,36 @@
   <section id="projects">
     <h2><span class="sec-num">03</span> PROJECTS<span class="h-slash">_</span></h2>
     <p class="sub">// designed AND built. that's the whole point.</p>
-    <div id="project-rows" class="rows"><!-- ssr:projects -->
-  <a class="row" href="https://openmat.fr" target="_blank" rel="noopener">
+    <div id="project-rows" class="rows"><!-- ssr:projects --><a class="row" href="https://openmat.fr" target="_blank" rel="noopener">
     <span class="c1">Astro · iOS · Android</span>
     <span class="c2">OpenMat</span>
     <span class="c3">Training companion for grapplers. Find open mats, log your rolls.</span>
-    <span class="c4">live</span>
-  </a>
-  <a class="row" href="https://www.coachingsimple.fr" target="_blank" rel="noopener">
+    <span class="c4">live</span></a><a class="row" href="https://www.coachingsimple.fr" target="_blank" rel="noopener">
     <span class="c1">Next.js · tRPC · Supabase · Stripe</span>
     <span class="c2">CoachingSimple</span>
     <span class="c3">Full coaching platform — programs, nutrition, payments, AI program generation.</span>
-    <span class="c4">live</span>
-  </a><!-- /ssr:projects --></div>
-    <p class="more" id="more"><!-- ssr:more -->// + ~20 experiments in ~/projects (summail, tariff, benchmark, audioletter, spellbook…)<!-- /ssr:more --></p>
+    <span class="c4">live</span></a><div class="row row-private">
+    <span class="c1">Next.js · Claude API</span>
+    <span class="c2">Summail</span>
+    <span class="c3">Inbox triage — your unread, summarized into one morning digest.</span>
+    <span class="c4">private</span></div><div class="row row-private">
+    <span class="c1">Next.js · React 19</span>
+    <span class="c2">Tariff</span>
+    <span class="c3">Real-time customs &amp; import-duty calculator for cross-border sellers.</span>
+    <span class="c4">private</span></div><div class="row row-private">
+    <span class="c1">TypeScript · CLI</span>
+    <span class="c2">Benchmark</span>
+    <span class="c3">Head-to-head harness to score LLMs on your own prompts.</span>
+    <span class="c4">private</span></div><div class="row row-private">
+    <span class="c1">Next.js · TTS</span>
+    <span class="c2">AudioLetter</span>
+    <span class="c3">Turns the newsletters you actually read into a daily audio digest.</span>
+    <span class="c4">private</span></div><div class="row row-private">
+    <span class="c1">Astro · MDX</span>
+    <span class="c2">Spellbook</span>
+    <span class="c3">A versioned prompt library — your best prompts, one keystroke away.</span>
+    <span class="c4">private</span></div><!-- /ssr:projects --></div>
+    <p class="more" id="more"><!-- ssr:more -->// + ~15 more experiments in ~/projects — ask me.<!-- /ssr:more --></p>
   </section>
 
   <!-- ── 04 · KUDOS ─────────────────────────────────────── -->
@@ -131,7 +150,7 @@
   </figure>
   <figure class="kudo">
     <figcaption class="kudo-head">
-      <img id="kudo-src-2" src="img/kudos/pierre.png" alt="" hidden>
+      <img id="kudo-src-2" src="img/kudos/pierre.jpg" alt="" hidden>
       <canvas id="kudo-px-2" role="img" aria-label="Pierre Bascoul"></canvas>
       <span class="kudo-id"><b>Pierre Bascoul</b><span class="kudo-org">Typology</span></span>
     </figcaption>
@@ -147,7 +166,7 @@
   </figure>
   <figure class="kudo">
     <figcaption class="kudo-head">
-      <img id="kudo-src-4" src="img/kudos/jean.png" alt="" hidden>
+      <img id="kudo-src-4" src="img/kudos/jean.jpg" alt="" hidden>
       <canvas id="kudo-px-4" role="img" aria-label="Jean Davoust"></canvas>
       <span class="kudo-id"><b>Jean Davoust</b><span class="kudo-org">STid</span></span>
     </figcaption>
@@ -185,5 +204,7 @@
 <script src="data.js"></script>
 <script src="js/pixelit.js"></script>
 <script src="app.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
