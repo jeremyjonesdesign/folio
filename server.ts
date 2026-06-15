@@ -23,16 +23,6 @@ Bun.serve({
     let path = decodeURIComponent(url.pathname);
     if (path === "/") path = "/index.html";
     if (path.includes("..")) return new Response("nope", { status: 400 });
-    // /admin is a production-only, auth-gated tool (see middleware.js on Vercel).
-    // Block it on the public dev domain; allow localhost so it stays testable.
-    if (path.startsWith("/admin")) {
-      const host = req.headers.get("host") ?? "";
-      if (!host.startsWith("localhost") && !host.startsWith("127.0.0.1")) {
-        return new Response("admin is served from production only.", {
-          status: 403, headers: { "content-type": "text/plain; charset=utf-8" },
-        });
-      }
-    }
     const file = Bun.file(root + path);
     if (!(await file.exists())) {
       const notFound = Bun.file(root + "/404.html");
