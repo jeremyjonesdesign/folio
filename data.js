@@ -41,7 +41,7 @@ const DATA = {
       url: "https://www.arcads.ai",
     },
     {
-      period: "2022 — 2025",
+      period: "2022",
       company: "Cycle",
       role: "Head of Product Design",
       note: "3 years building cycle.app — AI-powered product feedback. Acquired by Atlassian.",
