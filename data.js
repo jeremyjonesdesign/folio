@@ -12,7 +12,7 @@ const DATA = {
     "Multidisciplinary product designer. 17+ years in the industry — started in 2008.",
     "From IC to Head of. SaaS, gaming, healthcare & fashion. USA & Europe.",
     "3 years designing Cycle (cycle.app), until its acquisition by Atlassian.",
-    "Now at Contentsquare. Nights & weekends: I design AND build my own products.",
+    "Now: AI Innovation Product at a stealth legal-tech startup (Remote / NYC). Nights & weekends: I design AND build my own products.",
   ],
   quote: {
     text: "For every complex problem, there is an answer that is clear, simple and wrong.",
@@ -20,7 +20,13 @@ const DATA = {
   },
   work: [
     {
-      period: "2025 — now",
+      period: "now",
+      company: "Stealth",
+      role: "AI Innovation Product",
+      note: "Stealth startup — legal industry. Remote / NYC.",
+    },
+    {
+      period: "2025",
       company: "Contentsquare",
       role: "Innovation AI Product",
       note: "Digital experience analytics.",
@@ -32,6 +38,20 @@ const DATA = {
       role: "Head of Product Design",
       note: "3 years building cycle.app — AI-powered product feedback. Acquired by Atlassian.",
       url: "https://www.atlassian.com",
+    },
+    {
+      period: "2024",
+      company: "Arcads.ai",
+      role: "Senior Product Designer",
+      note: "AI-generated video ads.",
+      url: "https://www.arcads.ai",
+    },
+    {
+      period: "2021",
+      company: "Mozza",
+      role: "Senior Product Designer",
+      note: "Product & engineering studio.",
+      url: "https://www.mozza.io",
     },
     {
       period: "independent",
@@ -48,10 +68,10 @@ const DATA = {
       url: "https://typology.com",
     },
     {
-      period: "2008 — now",
+      period: "2008 — 2018",
       company: "Independent",
       role: "Visual Product Designer",
-      note: "Arcads, Facebook, Activision, Hermès, Chartboost, Voodoo, Spendesk, June, Etam, Edenred…",
+      note: "Facebook, Activision, Hermès, Chartboost, Voodoo, Spendesk, June, Etam, Edenred…",
     },
   ],
   education: "Institut Ingemedia — 2008-2010",
