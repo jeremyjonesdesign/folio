@@ -27,6 +27,13 @@ const DATA = {
     },
     {
       period: "2025",
+      company: "Arcads.ai",
+      role: "Senior Product Designer",
+      note: "AI-generated video ads.",
+      url: "https://www.arcads.ai",
+    },
+    {
+      period: "2025",
       company: "Contentsquare",
       role: "Innovation AI Product",
       note: "Digital experience analytics.",
@@ -38,13 +45,6 @@ const DATA = {
       role: "Head of Product Design",
       note: "3 years building cycle.app — AI-powered product feedback. Acquired by Atlassian.",
       url: "https://www.atlassian.com",
-    },
-    {
-      period: "2024",
-      company: "Arcads.ai",
-      role: "Senior Product Designer",
-      note: "AI-generated video ads.",
-      url: "https://www.arcads.ai",
     },
     {
       period: "2021",
