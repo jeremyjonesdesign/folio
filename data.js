@@ -12,7 +12,8 @@ const DATA = {
     "Multidisciplinary product designer. 17+ years in the industry — started in 2008.",
     "From IC to Head of. SaaS, gaming, healthcare & fashion. USA & Europe.",
     "3 years designing Cycle (cycle.app), until its acquisition by Atlassian.",
-    "Now: AI Innovation Product at a stealth legal-tech startup (Remote / NYC). Nights & weekends: I design AND build my own products.",
+    "Now: AI Innovation Product at North — a legal-tech startup (Remote / NYC).",
+    "Nights & weekends: I design AND build my own products.",
   ],
   quote: {
     text: "For every complex problem, there is an answer that is clear, simple and wrong.",
@@ -21,16 +22,9 @@ const DATA = {
   work: [
     {
       period: "now",
-      company: "Stealth",
+      company: "North",
       role: "AI Innovation Product",
-      note: "Stealth startup — legal industry. Remote / NYC.",
-    },
-    {
-      period: "2025",
-      company: "Arcads.ai",
-      role: "Senior Product Designer",
-      note: "AI-generated video ads.",
-      url: "https://www.arcads.ai",
+      note: "Legal industry. Remote / NYC.",
     },
     {
       period: "2025",
@@ -38,6 +32,13 @@ const DATA = {
       role: "Innovation AI Product",
       note: "Digital experience analytics.",
       url: "https://contentsquare.com",
+    },
+    {
+      period: "2024",
+      company: "Arcads.ai",
+      role: "Senior Product Designer",
+      note: "AI-generated video ads.",
+      url: "https://www.arcads.ai",
     },
     {
       period: "2022 — 2025",

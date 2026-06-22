@@ -241,7 +241,7 @@ typeBanner(() => {
     ["[ OK ] 17 years of design experience loaded (since 2008)", "dim"],
     ["[ OK ] mounting ~/projects (26 entries)", "dim"],
     ["[ OK ] 3 years @ cycle.app → exit: acquired (atlassian)", "dim"],
-    ["[ OK ] current: stealth legal-tech startup (remote/nyc)", "dim"],
+    ["[ OK ] current: north (legal-tech, remote/nyc)", "dim"],
     ["[ OK ] side-projects daemon: running", "dim"],
     "",
     "welcome. type <b>help</b> — or press <b>/</b> anywhere to focus the terminal.",
