@@ -24,7 +24,7 @@ const DATA = {
       period: "now",
       company: "Stealth",
       role: "AI Innovation Product",
-      note: "Legal industry. Remote / NYC.",
+      note: "Remote / NYC.",
     },
     {
       period: "2025",
