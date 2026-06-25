@@ -12,7 +12,7 @@ const DATA = {
     "Multidisciplinary product designer. 17+ years in the industry — started in 2008.",
     "From IC to Head of. SaaS, gaming, healthcare & fashion. USA & Europe.",
     "3 years designing Cycle (cycle.app), until its acquisition by Atlassian.",
-    "Now: AI Innovation Product at North — a legal-tech startup (Remote / NYC).",
+    "Now: AI Innovation Product at a stealth legal-tech startup (Remote / NYC).",
     "Nights & weekends: I design AND build my own products.",
   ],
   quote: {
@@ -22,7 +22,7 @@ const DATA = {
   work: [
     {
       period: "now",
-      company: "North",
+      company: "Stealth",
       role: "AI Innovation Product",
       note: "Legal industry. Remote / NYC.",
     },
