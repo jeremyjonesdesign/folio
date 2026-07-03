@@ -173,8 +173,8 @@ const DATA = {
     dribbble: "https://dribbble.com/jeijones",
   },
   music: {
-    file: "30-day-run.mp3",
-    title: "30 Day Run — Larry June",
-    url: "https://open.spotify.com/track/4TFfvD0SWug84djpHGHLXq",
+    file: "flawless.mp3",
+    title: "FLAWLESS — Ufo361",
+    url: "https://open.spotify.com/track/2d7K2MfmXEGa623EUowRpd",
   },
 };
