@@ -5,7 +5,7 @@
 const DATA = {
   name: "Jeremy Jones",
   handle: "jeremyjonesdesign",
-  title: "Product Maker",
+  title: "Product Maker x Engineer",
   location: "Paris, France",
   email: "contact@jeremy.design",
   bio: [
