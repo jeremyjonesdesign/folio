@@ -172,4 +172,9 @@ const DATA = {
     linkedin: "https://www.linkedin.com/in/jeremy-jones-designer/",
     dribbble: "https://dribbble.com/jeijones",
   },
+  music: {
+    file: "30-day-run.mp3",
+    title: "30 Day Run — Larry June",
+    url: "https://open.spotify.com/track/4TFfvD0SWug84djpHGHLXq",
+  },
 };

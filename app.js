@@ -111,6 +111,29 @@ function printSlow(linesArr, i = 0) {
   setTimeout(() => printSlow(linesArr, i + 1), reduced ? 0 : 90);
 }
 
+/* ── spotify mini-player ──────────────────────────────── */
+const spBtn = $("#sp-toggle");
+const spPanel = $("#sp-panel");
+$("#sp-title").textContent = "♪ " + DATA.music.file;
+function spToggle(show = spPanel.hidden) {
+  if (show && !spPanel.querySelector("iframe")) {
+    // lazy — spotify's iframe only loads on first open, never on page load.
+    // once created it stays in the DOM, so audio keeps playing panel closed.
+    const f = document.createElement("iframe");
+    f.src = `https://open.spotify.com/embed${new URL(DATA.music.url).pathname}?theme=0`;
+    f.allow = "encrypted-media; fullscreen";
+    f.title = "spotify player";
+    spPanel.appendChild(f);
+  }
+  spPanel.hidden = !show;
+  spBtn.setAttribute("aria-expanded", String(show));
+}
+spBtn.addEventListener("click", () => spToggle());
+$("#sp-close").addEventListener("click", () => spToggle(false));
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !spPanel.hidden) spToggle(false);
+});
+
 const FILES = {
   "about.txt": () => DATA.bio.map(esc),
   "contact.txt": () => [
@@ -119,6 +142,12 @@ const FILES = {
     `linkedin: <a href="${DATA.links.linkedin}" target="_blank" rel="noopener">${DATA.links.linkedin}</a>`,
   ],
   "quote.txt": () => [`“${esc(DATA.quote.text)}” — ${esc(DATA.quote.author)}`],
+  [DATA.music.file]: () => [
+    ["ÿû²dInfo!$&)+.0368;=@BEG… (binary file — nice try)", "dim"],
+    esc(DATA.music.title),
+    `→ <a href="${DATA.music.url}" target="_blank" rel="noopener">${DATA.music.url}</a>`,
+    ["// type music to play it here", "dim"],
+  ],
   "clients.txt": () => [DATA.clients.map(esc).join(" · "), ["(2008 → now, independent era)", "dim"]],
   "education.txt": () => [esc(DATA.education)],
 };
@@ -135,6 +164,7 @@ const COMMANDS = {
     "  kudos             what they say about me",
     "  open <project>    open a project (try: open openmat)",
     "  contact           reach out",
+    "  music             the background track",
     "  theme             invert the universe",
     "  clear             clean this mess",
     ["  …and a few undocumented ones. obviously.", "dim"],
@@ -143,12 +173,20 @@ const COMMANDS = {
   ls: () => [
     "drwxr-xr-x  projects/",
     "drwxr-xr-x  work/",
+    `-rw-r--r--  ${DATA.music.file}`,
     "-rw-r--r--  about.txt",
     "-rw-r--r--  clients.txt",
     "-rw-r--r--  contact.txt",
     "-rw-r--r--  education.txt",
     "-rw-r--r--  quote.txt",
   ],
+  music: () => {
+    spToggle(true);
+    return [
+      [`♪ mounting ${esc(DATA.music.file)} …`, "dim"],
+      `${esc(DATA.music.title)} — player opened, top-right. or <a href="${DATA.music.url}" target="_blank" rel="noopener">open in spotify</a>`,
+    ];
+  },
   clients: () => FILES["clients.txt"](),
   kudos: () => {
     location.hash = "#kudos";
