@@ -10,10 +10,12 @@ const DATA = {
   email: "contact@jeremy.design",
   bio: [
     "Multidisciplinary product designer. 17+ years in the industry — started in 2008.",
+    "First lines of code at 14. Too many hours on Counter-Strike 1.5 — no regrets.",
+    "Learned the front-end craft in a web design agency, back in the Internet Explorer era.",
+    "Linux & security certified — the serious, high-level kind. Windows Server 2003 too 💀",
     "From IC to Head of. SaaS, gaming, healthcare & fashion. USA & Europe.",
     "3 years designing Cycle (cycle.app), until its acquisition by Atlassian.",
     "Now: AI Innovation Product at a stealth legal-tech startup (Remote / NYC).",
-    "Nights & weekends: I design AND build my own products.",
   ],
   quote: {
     text: "For every complex problem, there is an answer that is clear, simple and wrong.",
@@ -75,7 +77,7 @@ const DATA = {
       note: "Facebook, Activision, Hermès, Chartboost, Voodoo, Spendesk, June, Etam, Edenred…",
     },
   ],
-  education: "Institut Ingemedia — 2008-2010",
+  education: "Institut Ingemedia — 2008-2010 · Linux & high-level security certifications · Windows Server 2003 💀 (yes, really)",
   clients: [
     "Arcads", "Facebook", "Activision", "Hermès", "Chartboost", "Voodoo", "Spendesk",
     "Typology", "June", "Async", "STid", "Brigad", "Mozza", "Hexa",
