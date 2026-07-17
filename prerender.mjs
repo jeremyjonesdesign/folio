@@ -11,9 +11,11 @@ const dataSrc = readFileSync(new URL("./data.js", import.meta.url), "utf8");
 const DATA = new Function(`${dataSrc}; return DATA;`)();
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+// **bold** → <b> — même règle que fmt() dans app.js
+const fmt = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
 
 const sections = {
-  about: DATA.bio.map((l) => `<p>${esc(l)}</p>`).join(""),
+  about: DATA.bio.map((l) => `<p>${fmt(l)}</p>`).join(""),
   quote: `“${esc(DATA.quote.text)}”<br><span class="author">— ${esc(DATA.quote.author)}</span>`,
   work: DATA.work.map((w) => {
     const inner = `

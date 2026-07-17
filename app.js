@@ -19,8 +19,10 @@ const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ── render static sections from DATA ─────────────────── */
 function esc(s) { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+/* **bold** → <b> — the only markup bio lines are allowed */
+function fmt(s) { return esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
 
-$("#about-body").innerHTML = DATA.bio.map((l) => `<p>${esc(l)}</p>`).join("");
+$("#about-body").innerHTML = DATA.bio.map((l) => `<p>${fmt(l)}</p>`).join("");
 $("#quote").innerHTML = `“${esc(DATA.quote.text)}”<br><span class="author">— ${esc(DATA.quote.author)}</span>`;
 
 $("#work-rows").innerHTML = DATA.work.map((w) => {
@@ -135,7 +137,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 const FILES = {
-  "about.txt": () => DATA.bio.map(esc),
+  "about.txt": () => DATA.bio.map(fmt),
   "contact.txt": () => [
     `email:    ${esc(DATA.email)}`,
     `github:   <a href="${DATA.links.github}" target="_blank" rel="noopener">${DATA.links.github}</a>`,
@@ -169,7 +171,7 @@ const COMMANDS = {
     "  clear             clean this mess",
     ["  …and a few undocumented ones. obviously.", "dim"],
   ],
-  whoami: () => [esc(DATA.name.toLowerCase().replace(" ", "-")), ...DATA.bio.map((l) => ["  " + esc(l), "dim"])],
+  whoami: () => [esc(DATA.name.toLowerCase().replace(" ", "-")), ...DATA.bio.map((l) => ["  " + fmt(l), "dim"])],
   ls: () => [
     "drwxr-xr-x  projects/",
     "drwxr-xr-x  work/",
