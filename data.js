@@ -13,7 +13,7 @@ const DATA = {
     "3 years building and designing Cycle (cycle.app) — **acquired by Atlassian**.",
     "First lines of code at 14. Too many hours on Counter-Strike 1.5 — no regrets.",
     "Learned the front-end craft in a web design agency, back in the Internet Explorer era.",
-    "Fun fact: LPIC-certified — Linux, mail servers, firewalls. Also Windows Server 2003 💀 (RIP 2015).",
+    "Fun fact: LPIC-certified — Linux, mail servers, firewalls. Also Windows Server 2003 💀",
     "From IC to Head of. SaaS, gaming, healthcare & fashion. USA & Europe.",
   ],
   quote: {
