@@ -173,8 +173,8 @@ const DATA = {
     dribbble: "https://dribbble.com/jeijones",
   },
   music: {
-    file: "flawless.mp3",
-    title: "FLAWLESS — Ufo361",
-    url: "https://open.spotify.com/track/2d7K2MfmXEGa623EUowRpd",
+    file: "we-here.mp3",
+    title: "We Here — Illa J",
+    url: "https://open.spotify.com/track/7CcsWDd2PUFkZF6gTvii95",
   },
 };
