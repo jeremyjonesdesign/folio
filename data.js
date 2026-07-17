@@ -13,7 +13,7 @@ const DATA = {
     "3 years building and designing Cycle (cycle.app) — **acquired by Atlassian**.",
     "First lines of code at 14. Too many hours on Counter-Strike 1.5 — no regrets.",
     "Learned the front-end craft in a web design agency, back in the Internet Explorer era.",
-    "Linux & security certified — the serious, high-level kind. Windows Server 2003 too 💀",
+    "Fun fact: LPIC-certified — Linux, mail servers, firewalls. Also Windows Server 2003 💀 (RIP 2015).",
     "From IC to Head of. SaaS, gaming, healthcare & fashion. USA & Europe.",
   ],
   quote: {
@@ -76,7 +76,7 @@ const DATA = {
       note: "Facebook, Activision, Hermès, Chartboost, Voodoo, Spendesk, June, Etam, Edenred…",
     },
   ],
-  education: "Institut Ingemedia — 2008-2010 · Linux & high-level security certifications · Windows Server 2003 💀 (yes, really)",
+  education: "Institut Ingemedia — 2008-2010 · LPIC — Linux, mail servers, firewalls · Windows Server 2003 💀 (RIP 2015, yes really)",
   clients: [
     "Arcads", "Facebook", "Activision", "Hermès", "Chartboost", "Voodoo", "Spendesk",
     "Typology", "June", "Async", "STid", "Brigad", "Mozza", "Hexa",
