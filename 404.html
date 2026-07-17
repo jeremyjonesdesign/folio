@@ -8,6 +8,19 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='black'/><text x='2' y='12' font-family='monospace' font-size='10' fill='white'>JJ</text></svg>">
 <link rel="preload" href="/fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/style.css">
+<style>
+  /* 404 only — center the whole block in the viewport */
+  body { display: flex; min-height: 100dvh; }
+  .wrap {
+    margin: auto;
+    padding: 24px 20px;
+    max-width: 100%;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  #banner { min-height: 0; margin-bottom: 12px; }
+  .tagline { text-align: center; }
+  #terminal { min-height: 0; max-width: 100%; cursor: default; }
+</style>
 </head>
 <body>
 <div class="crt" aria-hidden="true"></div>
@@ -33,6 +46,45 @@
   var p = (location.pathname.slice(1) || "that") + "";
   document.getElementById("path").textContent = p;
   document.getElementById("path2").textContent = p;
+
+  /* the 404 glitches like the segfault it is —
+     decode on load, then random corruption bursts. */
+  (function () {
+    var banner = document.getElementById("banner");
+    var ORIG = banner.textContent;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var GLYPHS = "▓▒░#%@*+=<>?/\\";
+    function corrupt(n) {
+      var chars = ORIG.split("");
+      while (n--) {
+        var i = Math.floor(Math.random() * chars.length);
+        if (chars[i] === "\n" || chars[i] === " ") continue;
+        chars[i] = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+      }
+      return chars.join("");
+    }
+    var step = 0, STEPS = 10;
+    (function decode() {
+      step++;
+      banner.textContent = step >= STEPS ? ORIG : corrupt((STEPS - step) * 12);
+      if (step < STEPS) setTimeout(decode, 60);
+      else setTimeout(glitch, 1600);
+    })();
+    function glitch() {
+      var frames = 2 + Math.floor(Math.random() * 3), f = 0;
+      (function burst() {
+        if (++f > frames) {
+          banner.textContent = ORIG;
+          banner.style.transform = "";
+          setTimeout(glitch, 1200 + Math.random() * 2800);
+          return;
+        }
+        banner.textContent = corrupt(5 + Math.floor(Math.random() * 9));
+        banner.style.transform = "translateX(" + (f % 2 ? 2 : -2) + "px)";
+        setTimeout(burst, 70);
+      })();
+    }
+  })();
 </script>
 </body>
 </html>
