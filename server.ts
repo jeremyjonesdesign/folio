@@ -18,6 +18,7 @@ const types: Record<string, string> = {
 
 Bun.serve({
   port,
+  hostname: process.env.HOST ?? "127.0.0.1", // derrière Caddy uniquement — pas exposé au tailnet/net
   async fetch(req) {
     const url = new URL(req.url);
     let path = decodeURIComponent(url.pathname);
