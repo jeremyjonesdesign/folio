@@ -174,8 +174,8 @@ const DATA = {
     dribbble: "https://dribbble.com/jeijones",
   },
   music: {
-    file: "we-here.mp3",
-    title: "We Here — Illa J",
-    url: "https://open.spotify.com/track/7CcsWDd2PUFkZF6gTvii95",
+    file: "que-rica.mp3",
+    title: "Que Rica — prodThina",
+    url: "https://open.spotify.com/track/3GpxHJQ5qupcILYr3me1Lv",
   },
 };
