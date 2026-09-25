@@ -23,9 +23,10 @@ const DATA = {
   work: [
     {
       period: "now",
-      company: "Stealth",
+      company: "North",
       role: "AI Innovation Product",
-      note: "Remote / NYC.",
+      note: "Claude, engineered into law firms. Remote / NYC.",
+      url: "https://north.law",
     },
     {
       period: "2025",
