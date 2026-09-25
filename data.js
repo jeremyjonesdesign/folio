@@ -24,8 +24,8 @@ const DATA = {
     {
       period: "now",
       company: "North",
-      role: "AI Innovation Product",
-      note: "Claude, engineered into law firms. Remote / NYC.",
+      role: "Product Engineer",
+      note: "Bringing Claude into the heart of law firms. New York.",
       url: "https://north.law",
     },
     {
