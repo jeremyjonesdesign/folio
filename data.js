@@ -24,7 +24,7 @@ const DATA = {
     {
       period: "now",
       company: "North",
-      role: "Product Engineer",
+      role: "Product | Design | Engineer",
       note: "Bringing Claude into the heart of law firms. New York.",
       url: "https://north.law",
     },
