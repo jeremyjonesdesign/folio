@@ -162,7 +162,7 @@ const COMMANDS = {
     "  cat <file>        read a file (try: cat about.txt)",
     "  projects          list shipped things",
     "  work              employment history",
-    "  clients           17 years of logos",
+    "  clients           18 years of logos",
     "  kudos             what they say about me",
     "  open <project>    open a project (try: open openmat)",
     "  contact           reach out",
@@ -278,7 +278,7 @@ document.querySelectorAll(".cmdlink").forEach((b) =>
 typeBanner(() => {
   printSlow([
     ["[ OK ] loading design system… found: black, white.", "dim"],
-    ["[ OK ] 17 years of design experience loaded (since 2008)", "dim"],
+    ["[ OK ] 18 years of design experience loaded (since 2008)", "dim"],
     ["[ OK ] mounting ~/projects (26 entries)", "dim"],
     ["[ OK ] 3 years @ cycle.app → exit: acquired (atlassian)", "dim"],
     ["[ OK ] current: product | design | engineer @ north — claude for law firms (nyc)", "dim"],
